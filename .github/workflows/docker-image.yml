@@ -16,7 +16,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: self-hosted
+    runs-on: nator-env02
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
