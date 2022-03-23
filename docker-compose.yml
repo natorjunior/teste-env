@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  controle_tv:
+    container_name: controle_TV
+    build: .
+    restart: unless-stopped
+    ports:
+      - 8585:80 
