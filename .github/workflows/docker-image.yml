@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: |
            docker build . --file Dockerfile --tag my-image-name:v0.0.1
-           docker-compose up
+           docker-compose up -d
