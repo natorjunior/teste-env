@@ -3,7 +3,8 @@ version: '3'
 services:
   controle_tv:
     container_name: controle_TV
-    build: .
+    image: controle-x:v0.0.1
+    build: . 
     restart: unless-stopped
     ports:
       - 8587:80 
