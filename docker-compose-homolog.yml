@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  controle_tv_homolog:
+    container_name: controle_TV_homolog
+    image: controle-x_homolog:v0.0.1
+    build: . 
+    restart: unless-stopped
+    ports:
+      - 8587:80 
