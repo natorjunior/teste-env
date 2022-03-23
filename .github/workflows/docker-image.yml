@@ -14,10 +14,17 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:v0.0.2
 
-  deploy:
+  deploy-develop:
     needs: build
     runs-on: nator-env02
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
+    - name: Subindo docker compose DEVELOP
       run: docker-compose up -d
+  deploy-homolog:
+    needs: deploy-develop
+    runs-on: nator-env02
+    steps:
+    - uses: actions/checkout@v2
+    - name: Subindo docker compose Homolog
+      run: docker-compose -f docker-compose-homolog.yml up -d 
