@@ -7,14 +7,16 @@ on:
     branches: [ main ]
 
 jobs:
-
   build:
-
     runs-on: self-hosted
-
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: |
-           docker build . --file Dockerfile --tag my-image-name:v0.0.2
-           docker-compose up -d
+      run: docker build . --file Dockerfile --tag my-image-name:v0.0.2
+
+  deploy:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker-compose up -d
