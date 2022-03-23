@@ -7,4 +7,4 @@ services:
     build: . 
     restart: unless-stopped
     ports:
-      - 8587:80 
+      - 8588:80 
